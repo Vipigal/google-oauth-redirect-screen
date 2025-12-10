@@ -2,48 +2,72 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integração Concluída - SYF OS</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen flex items-center justify-center">
-  <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
-    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-      <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-      </svg>
-    </div>
-    
-    <h1 class="text-2xl font-bold text-gray-900 mb-2">
-      Integração Concluída!
-    </h1>
-    
-    <p class="text-gray-600 mb-6">
-      Sua conta <strong id="email"></strong> foi conectada com sucesso.
-    </p>
-    
-    <div class="bg-blue-50 rounded-lg p-4 mb-6">
-      <p class="text-sm text-gray-700">
-        Agora seu agente pode criar agendamentos automaticamente! 🎉
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integração Concluída - SYF OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen flex items-center justify-center"
+  >
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+      <div
+        class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+      >
+        <svg
+          class="w-10 h-10 text-green-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      </div>
+
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">
+        Integração Concluída!
+      </h1>
+
+      <p class="text-gray-600 mb-6">
+        Sua conta <strong id="email"></strong> foi conectada com sucesso.
+      </p>
+
+      <div class="bg-blue-50 rounded-lg p-4 mb-6">
+        <p class="text-sm text-gray-700">
+          Agora seu agente pode criar agendamentos automaticamente! 🎉
+        </p>
+      </div>
+
+      <button
+        onclick="window.close()"
+        class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+      >
+        Fechar Janela
+      </button>
+
+      <p class="text-xs text-gray-500 mt-4">
+        Esta janela fechará automaticamente em 5 segundos
       </p>
     </div>
-    
-  </div>
 
-  <script>
-    // Pegar email da query string
-    const params = new URLSearchParams(window.location.search);
-    const email = params.get('email');
-    if (email) {
-      document.getElementById('email').textContent = email;
-    }
+    <script>
+      // Pegar email da query string
+      const params = new URLSearchParams(window.location.search);
+      const email = params.get("email");
+      if (email) {
+        document.getElementById("email").textContent = email;
+      }
 
-    // Auto-fechar após 5 segundos
-    setTimeout(() => {
-      window.close();
-    }, 5000);
-  </script>
-</body>
+      // Auto-fechar após 5 segundos
+      setTimeout(() => {
+        window.close();
+      }, 5000);
+    </script>
+  </body>
 </html>

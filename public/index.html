@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYF OS - Sistema Operacional de Inteligência Empresarial</title>
+    <meta name="description" content="Automatize suas operações comerciais com agentes de IA inteligentes. O SYF OS transforma seu WhatsApp em uma máquina de vendas autônoma.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #09090b;
+            color: #fafafa;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fafafa;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #fafafa;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 100px;
+            font-size: 13px;
+            color: #a78bfa;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #8b5cf6;
+            color: #fafafa;
+        }
+
+        .btn-primary:hover {
+            background: #7c3aed;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fafafa;
+            border: 1px solid #27272a;
+        }
+
+        .btn-secondary:hover {
+            background: #18181b;
+            border-color: #3f3f46;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            border-top: 1px solid #27272a;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .features-header h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .features-header p {
+            color: #a1a1aa;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 32px;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: #3f3f46;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #a1a1aa;
+            font-size: 14px;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 80px 0;
+            border-top: 1px solid #27272a;
+        }
+
+        .how-it-works h2 {
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: #a1a1aa;
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            border-top: 1px solid #27272a;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 64px;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: #a1a1aa;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #27272a;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #71717a;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #a1a1aa;
+        }
+
+        .copyright {
+            color: #52525b;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                gap: 24px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">SYF <span>OS</span></a>
+                <nav>
+                    <a href="#features">Recursos</a>
+                    <a href="#como-funciona">Como Funciona</a>
+                    <a href="mailto:joao.fnac@syf.com.br">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="badge">🚀 Sistema Operacional de IA para Negócios</div>
+                <h1>Transforme seu WhatsApp em uma <span>máquina de vendas autônoma</span></h1>
+                <p>Agentes de IA que qualificam leads, agendam reuniões e nutrem clientes automaticamente. 24 horas por dia, 7 dias por semana.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:joao.fnac@syf.com.br" class="btn btn-primary">Falar com Especialista</a>
+                    <a href="#como-funciona" class="btn btn-secondary">Ver Como Funciona</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="features-header">
+                    <h2>Tudo que você precisa para escalar</h2>
+                    <p>Um sistema completo de automação comercial inteligente</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Cérebros Inteligentes</h3>
+                        <p>Base de conhecimento que aprende sobre seu negócio e responde como um especialista da sua empresa.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Agentes Autônomos</h3>
+                        <p>IA que qualifica leads, identifica oportunidades e conduz conversas de vendas naturalmente.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <h3>Agendamento Automático</h3>
+                        <p>Integração com Google Calendar para agendar reuniões automaticamente quando o lead está pronto.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>WhatsApp Nativo</h3>
+                        <p>Funciona diretamente no WhatsApp do seu time, sem apps extras ou mudança de comportamento.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Métricas em Tempo Real</h3>
+                        <p>Dashboard completo com taxa de conversão, tempo de resposta e performance dos agentes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Setup em Minutos</h3>
+                        <p>Onboarding guiado que configura seus agentes rapidamente, sem necessidade de código.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="como-funciona">
+            <div class="container">
+                <h2>Como Funciona</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Configure seu Cérebro</h3>
+                        <p>Responda algumas perguntas e faça upload de documentos. O sistema aprende sobre seu negócio.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Ative seus Agentes</h3>
+                        <p>Defina o perfil do seu cliente ideal e as regras de qualificação. Os agentes começam a trabalhar.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Conecte seu WhatsApp</h3>
+                        <p>Integração simples via QR Code. Seus agentes assumem as conversas automaticamente.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Escale suas Vendas</h3>
+                        <p>Acompanhe métricas, receba leads qualificados e foque no que importa: fechar negócios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Pronto para automatizar seu comercial?</h2>
+                    <p>Junte-se às empresas que já estão usando IA para escalar suas vendas sem aumentar o time.</p>
+                    <a href="mailto:joao.fnac@syf.com.br" class="btn btn-primary">Começar Agora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/privacy">Política de Privacidade</a>
+                    <a href="/terms">Termos de Uso</a>
+                    <a href="mailto:joao.fnac@syf.com.br">Contato</a>
+                </div>
+                <div class="copyright">
+                    © 2025 SYF. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
